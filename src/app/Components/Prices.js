@@ -8,7 +8,10 @@ function Prices() {
         <div className="w-full flex ">
           {membershipPrices.map(
             ({ membershipName, membershipDesc, membershipPrice, period }) => (
-              <div className=" flex flex-col w-1/5 bg-blueGrotto even:mx-1 rounded-md overflow-hidden shadow-blueGrotto shadow-sm">
+              <div
+                className=" flex flex-col w-1/5 bg-blueGrotto even:mx-1 rounded-md overflow-hidden shadow-blueGrotto shadow-sm"
+                key={membershipName}
+              >
                 <h3 className="bg-royalBlue py-1 text-center text-2xl">
                   {membershipName}
                 </h3>
@@ -30,7 +33,10 @@ function Prices() {
         </p>
         <div className="flex w-fit">
           {trainingPackagesPrices.map(({ packageDesc, packagePrice }) => (
-            <div className="flex flex-col even:mx-1 my-2 rounded-md overflow-hidden shadow-blueGrotto shadow-sm">
+            <div
+              className="flex flex-col even:mx-1 my-2 rounded-md overflow-hidden shadow-blueGrotto shadow-sm"
+              key={packagePrice}
+            >
               <h3 className="grow text-2xl  bg-blueGrotto py-1 px-2">
                 {packageDesc}
               </h3>

@@ -1,20 +1,22 @@
 import Image from "next/image";
 import Header from "./Components/Header";
-import Nav from "./Components/Nav";
 import Prices from "./Components/Prices";
 import Equipment from "./Components/Equipment";
 import Staff from "./Components/Staff";
 import ContactUs from "./Components/ContactUS";
+import Footer from "./Components/Footer";
 
 export default function Home() {
   return (
-    <main className="bg-navyBlue min-h-fit">
+    <div className="w-full">
       <Header />
-      <Nav />
-      <Prices />
-      <Equipment />
-      <Staff />
-      <ContactUs />
-    </main>
+      <main className="bg-navyBlue min-h-fit  flex flex-col items-center">
+        <Prices />
+        <Equipment />
+        <Staff />
+        <ContactUs />
+      </main>
+      <Footer />
+    </div>
   );
 }

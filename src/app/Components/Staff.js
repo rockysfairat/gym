@@ -5,9 +5,9 @@ function Staff() {
   return (
     <article className="w-full flex justify-center">
       <section className="w-3/4 flex flex-col">
-        <h2>Our staff</h2>
+        <h2 className="mb-4">Our staff</h2>
         {staff.map(({ name, position, desc, photo }) => (
-          <div className="flex items-center mb-5">
+          <div className="flex items-center mb-5" key={name}>
             <Image
               className="rounded-full overflow-hidden"
               src={photo}
