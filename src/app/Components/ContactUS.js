@@ -1,34 +1,47 @@
 "use client";
 
-import { useContext, useRef } from "react";
+import { useState, useContext } from "react";
 import { AppContext } from "../layout";
-import emailjs from "@emailjs/browser";
+import { send } from "@emailjs/browser";
 
 function ContactUs() {
   // language switch handler:
   const { englishVersion, setEnglishVersion } = useContext(AppContext);
 
   // Email JS functionality:
-  const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        process.env.SERVICE_ID,
-        process.env.TEMPLATE_ID,
-        form.current,
-        process.env.PUBLIC_KEY
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    send(
+      process.env.NEXT_PUBLIC_SERVICE_ID,
+      process.env.NEXT_PUBLIC_TEMPLATE_ID,
+      { senderName, senderEmail, msg },
+      process.env.NEXT_PUBLIC_PUBLIC_KEY
+    ).then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
+  };
+
+  // Handling the user msg:
+  const [senderName, setSenderName] = useState("");
+  const [senderEmail, setSenderEmail] = useState("");
+  const [msg, setMsg] = useState("");
+
+  // Grabbing user's input:
+  const handleSenderName = (e) => {
+    setSenderName(e.target.value);
+  };
+  const handleSenderEmail = (e) => {
+    setSenderEmail(e.target.value);
+  };
+  const handleMsg = (e) => {
+    setMsg(e.target.value);
   };
 
   return (
@@ -37,17 +50,28 @@ function ContactUs() {
         {englishVersion ? "Contact us:" : "Skriv till oss:"}
       </h2>
       <form
-        ref={form}
         onSubmit={sendEmail}
         className="w-[60%] md:w-full md:px-5 flex flex-col items-center [&>label]:w-full [&>label]:font-secondary [&>input]:w-full [&>input]:bg-backgroundColor/25 [&>input]:rounded-md [&>input]:p-2 [&>input]:mb-4 [&>input]:font-secondary"
       >
         <label for="userName">{englishVersion ? "Name:" : "Namn:"}</label>
-        <input type="text" name="userName" required></input>
+        <input
+          type="text"
+          name="senderName"
+          value={senderName}
+          onChange={handleSenderName}
+          required
+        ></input>
 
         <label for="userEmail" required>
           E-mail:
         </label>
-        <input type="email" name="userEmail"></input>
+        <input
+          type="email"
+          name="senderEmail"
+          required
+          value={senderEmail}
+          onChange={handleSenderEmail}
+        ></input>
 
         <label for="subject">{englishVersion ? "Subject" : "Ämne:"}</label>
         <input type="text" name="subject"></input>
@@ -56,7 +80,9 @@ function ContactUs() {
           {englishVersion ? "Message:" : "Meddelande:"}
         </label>
         <textarea
-          name="message"
+          name="msg"
+          value={msg}
+          onChange={handleMsg}
           className="bg-backgroundColor/25 rounded-md p-2 font-secondary w-full"
           rows="20"
           cols="10"
