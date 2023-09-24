@@ -14,7 +14,7 @@ module.exports = {
       red: "#f00f",
     },
     screens: {
-      sm: "800px",
+      sm: "820px",
     },
     extend: {
       fontFamily: {

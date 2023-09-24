@@ -1,12 +1,14 @@
 "use client";
 
 import { useState, useContext } from "react";
+// Language context:
 import { AppContext } from "../layout";
+// Email JS:
 import { send } from "@emailjs/browser";
 
 function ContactUs() {
   // language switch handler:
-  const { englishVersion, setEnglishVersion } = useContext(AppContext);
+  const { englishVersion } = useContext(AppContext);
 
   // Email JS functionality:
 
