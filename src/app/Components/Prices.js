@@ -14,18 +14,19 @@ import {
 function Prices() {
   // language switch handler:
   const { englishVersion } = useContext(AppContext);
+  let membershipPrices = englishVersion
+    ? membershipPricesEn
+    : membershipPricesSv;
+  let trainingPackagesPrices = englishVersion
+    ? trainingPackagesPricesEn
+    : trainingPackagesPricesSv;
   return (
     <>
-      <article
-        className={
-          "h-screen w-full flex-col items-center justify-center" +
-          (englishVersion ? " flex" : " hidden")
-        }
-      >
+      <article className="h-screen w-full flex flex-col items-center justify-center">
         <section className="w-3/4">
-          <h2>Prices:</h2>
+          <h2>{englishVersion ? "Prices:" : "Priser:"}</h2>
           <div className="w-full flex ">
-            {membershipPricesEn.map(
+            {membershipPrices.map(
               ({ membershipName, membershipDesc, membershipPrice, period }) => (
                 <div
                   className=" flex flex-col w-1/5 bg-blueGrotto even:mx-1 rounded-md overflow-hidden shadow-blueGrotto shadow-sm"
@@ -45,13 +46,18 @@ function Prices() {
           </div>
         </section>
         <section className="w-3/4">
-          <h2>Personal Training Packages:</h2>
+          <h2>
+            {englishVersion
+              ? "Personal Training Packages:"
+              : "Personliga träningspaket:"}
+          </h2>
           <p className="text-babyBlue">
-            One-on-one sessions with a personal trainer to help you achieve
-            specific fitness goals.
+            {englishVersion
+              ? "One-on-one sessions with a personal trainer to help you achieve specific fitness goals."
+              : "En-mot-en-sessioner med en personlig tränare för att hjälpa dig att uppnå specifika träningsmål."}
           </p>
           <div className="flex w-fit">
-            {trainingPackagesPricesEn.map(({ packageDesc, packagePrice }) => (
+            {trainingPackagesPrices.map(({ packageDesc, packagePrice }) => (
               <div
                 className="flex flex-col even:mx-1 my-2 rounded-md overflow-hidden shadow-blueGrotto shadow-sm"
                 key={packagePrice}
@@ -66,14 +72,13 @@ function Prices() {
             ))}
           </div>
           <aside className="text-babyBlue w-1/2">
-            Please note that these prices are fictional and may vary depending
-            on the actual location, services offered, and other factors. Always
-            check with the specific gym for their current pricing and membership
-            options.
+            {englishVersion
+              ? "Please note that these prices are fictional and may vary depending on the actual location, services offered, and other factors. Always check with the specific gym for their current pricing and membership options."
+              : "Observera att dessa priser är fiktiva och kan variera beroende på den faktiska platsen, tjänsterna som erbjuds och andra faktorer. Kontrollera alltid med det specifika gymmet för deras aktuella priser och medlemsalternativ."}
           </aside>
         </section>
       </article>
-      <article
+      {/* <article
         className={
           "h-screen w-full flex-col items-center justify-center" +
           (!englishVersion ? " flex" : " hidden")
@@ -102,10 +107,9 @@ function Prices() {
           </div>
         </section>
         <section className="w-3/4">
-          <h2>Personliga träningspaket:</h2>
+          <h2></h2>
           <p className="text-babyBlue">
-            En-mot-en-sessioner med en personlig tränare för att hjälpa dig att
-            uppnå specifika träningsmål.
+            
           </p>
           <div className="flex w-fit">
             {trainingPackagesPricesSv.map(({ packageDesc, packagePrice }) => (
@@ -123,13 +127,10 @@ function Prices() {
             ))}
           </div>
           <aside className="text-babyBlue w-1/2">
-            Observera att dessa priser är fiktiva och kan variera beroende på
-            den faktiska platsen, tjänsterna som erbjuds och andra faktorer.
-            Kontrollera alltid med det specifika gymmet för deras aktuella
-            priser och medlemsalternativ.
+            
           </aside>
         </section>
-      </article>
+      </article> */}
     </>
   );
 
