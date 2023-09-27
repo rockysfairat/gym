@@ -1,6 +1,22 @@
+// Header images:
+export const headerImgs = [
+  {
+    url: "/header/1.png",
+    alt: "Weights",
+  },
+  {
+    url: "/header/2.png",
+    alt: "Treadmills",
+  },
+  {
+    url: "/header/3.png",
+    alt: "Cable machine",
+  },
+];
+
 // Prices:
 
-export let membershipPricesEn = [
+export const membershipPricesEn = [
   {
     membershipName: "Basic",
     membershipDesc:
@@ -51,7 +67,7 @@ export let membershipPricesEn = [
   },
 ];
 
-export let membershipPricesSv = [
+export const membershipPricesSv = [
   {
     membershipName: "Bas",
     membershipDesc:
@@ -104,7 +120,7 @@ export let membershipPricesSv = [
 
 // Packages prices:
 
-export let trainingPackagesPricesEn = [
+export const trainingPackagesPricesEn = [
   {
     packageDesc: "5 sessions",
     packagePrice: "$200",
@@ -136,7 +152,7 @@ export let trainingPackagesPricesSv = [
 
 // Equipment:
 
-export let equipmentEn = [
+export const equipmentEn = [
   {
     equipmentItem: "Treadmill",
     equipmentDesc:
@@ -187,7 +203,7 @@ export let equipmentEn = [
   },
 ];
 
-export let equipmentSv = [
+export const equipmentSv = [
   {
     equipmentItem: "Löpband",
     equipmentDesc:
@@ -240,7 +256,7 @@ export let equipmentSv = [
 
 // Staff:
 
-export let staffEn = [
+export const staffEn = [
   {
     name: "Sarah Johnson",
     position: "Personal Trainer",

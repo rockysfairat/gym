@@ -6,9 +6,9 @@
 
 @layer base {
   h2 {
-    @apply font-BlackOpsOne text-babyBlue text-6xl mt-10;
+    @apply font-BlackOpsOne text-babyBlue lg:text-6xl text-3xl mt-10;
   }
   li {
-    @apply px-4 py-2 font-BlackOpsOne text-navyBlue text-3xl;
+    @apply font-BlackOpsOne text-navyBlue text-xl lg:text-3xl;
   }
 }

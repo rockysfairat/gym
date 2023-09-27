@@ -12,8 +12,10 @@ module.exports = {
       royalBlue: "#0074B7",
       navyBlue: "#0f172a",
       red: "#f00f",
+      gren: "#00ff00",
     },
     screens: {
+      lg: "1200px",
       sm: "820px",
     },
     extend: {
