@@ -12,12 +12,12 @@ function Staff() {
   const { englishVersion } = useContext(AppContext);
   let staff = englishVersion ? staffEn : staffSv;
   return (
-    <article className="w-full flex justify-center overflow-hidden">
-      <section className="w-[95%] lg:w-3/4  flex flex-col">
+    <article className="w-[95%] md:w-3/4 flex justify-center overflow-hidden">
+      <section className="w-full  flex flex-col">
         <h2 className="mb-4">Our staff:</h2>
         {staff.map(({ name, position, desc, photo }) => (
           <div
-            className="flex items-center mb-5 flex-col lg:flex-row"
+            className="flex items-center mb-5 flex-col sm:flex-row"
             key={name}
           >
             <Image
@@ -29,7 +29,7 @@ function Staff() {
               style={{ objectFit: "cover" }}
               loading="lazy"
             />
-            <div className="bg-blueGrotto w-full lg:w-3/4 rounded-md overflow-hidden p-3 ml-0 lg:ml-4 flex flex-col grow shadow-blueGrotto shadow-sm">
+            <div className="bg-blueGrotto w-full sm:w-3/4 rounded-md overflow-hidden p-3 ml-0 sm:ml-4 flex flex-col grow shadow-blueGrotto shadow-sm">
               <h3 className="text-2xl font-semibold">{name}</h3>
               <h4 className="text-xl font-semibold">{position}</h4>
               <p className="text-lg mt-3">{desc}</p>

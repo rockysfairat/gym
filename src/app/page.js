@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Header from "./Components/Header";
 import Prices from "./Components/Prices";
 import Equipment from "./Components/Equipment";
@@ -10,7 +9,7 @@ export default function Home() {
   return (
     <div className="w-full">
       <Header />
-      <main className="bg-navyBlue min-h-fit  flex flex-col items-center">
+      <main className="bg-navyBlue min-h-fit flex flex-col items-center">
         <Prices />
         <Equipment />
         <Staff />

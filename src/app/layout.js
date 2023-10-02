@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
   const [englishVersion, setEnglishVersion] = useState(false);
 
   return (
-    <html lang="en" className="box-border">
+    <html lang="en" className="box-border overflow-x-hidden">
       <body className={inter.className}>
         <AppContext.Provider value={{ englishVersion, setEnglishVersion }}>
           <Nav />

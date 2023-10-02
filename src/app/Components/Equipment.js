@@ -15,16 +15,16 @@ function Equipment() {
 
   return (
     <article className="w-full flex justify-center">
-      <section className="w-[95%] lg:w-3/4 flex flex-wrap justify-between">
+      <section className="w-[95%] md:w-3/4 flex flex-wrap justify-between">
         <h2 className="title w-full mb-4">
           {englishVersion ? "Our equipment:" : "Vår utrustning:"}
         </h2>
         {equipment.map(({ equipmentItem, equipmentDesc, equipmentImg }) => (
           <div
-            className="w-full lg:w-[49%] flex flex-col content-between mb-6 rounded-md overflow-hidden lg:shadow-blueGrotto lg:shadow-sm lg:outline-none outline-blueGrotto outline outline-1"
+            className="w-full lg:w-[49%] flex flex-col content-between mb-6 rounded-md overflow-hidden md:shadow-blueGrotto md:shadow-sm md:outline-none outline-blueGrotto outline outline-1"
             key={equipmentItem}
           >
-            <div className="w-full h-48 lg:h-96 flex">
+            <div className="w-full h-48 md:h-96 flex">
               <Image
                 className="w-full"
                 src={equipmentImg}
