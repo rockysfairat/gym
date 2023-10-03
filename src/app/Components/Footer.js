@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 // Language context:
 import { useContext, useState } from "react";
 import { AppContext } from "../layout";
@@ -17,10 +18,22 @@ function Footer() {
         className="absolute bottom-0 left-0"
       />
       <ul className="list-none flex flex-col p-2 w-fit [&>li]:font-sans [&>li]:text-lg">
-        <li>{englishVersion ? "Prices" : "Priser"}</li>
-        <li>{englishVersion ? "Equipment" : "Utrustning"}</li>
-        <li>{englishVersion ? "Staff" : "Personal"}</li>
-        <li>{englishVersion ? "Contact us" : "Skriv till oss"}</li>
+        <li className="hover:underline">
+          <Link href="#prices">{englishVersion ? "Prices" : "Priser"}</Link>
+        </li>
+        <li className="hover:underline">
+          <Link href="#equipment">
+            {englishVersion ? "Equipment" : "Utrustning"}
+          </Link>
+        </li>
+        <li className="hover:underline">
+          <Link href="#staff">{englishVersion ? "Staff" : "Personal"}</Link>
+        </li>
+        <li className="hover:underline">
+          <Link href="#contactUs">
+            {englishVersion ? "Contact us" : "Skriv till oss"}
+          </Link>
+        </li>
       </ul>
       <h2 className="text-xl mt-0 text-navyBlue">
         Local gym<span className="font-sans text-xs align-top p-2">TM</span>

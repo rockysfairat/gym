@@ -50,20 +50,23 @@ function Prices() {
 
   return (
     <>
-      <article className="h-screen lg:w-full md:w-3/4 sm:w-full w-3/4 flex flex-col items-center justify-center overflow-hidden">
+      <article
+        id="prices"
+        className="h-screen lg:w-full md:w-3/4 sm:w-full w-3/4 flex flex-col items-center justify-center overflow-hidden"
+      >
         <section className="lg:w-3/4 w-full">
           <h2>{englishVersion ? "Prices:" : "Priser:"}</h2>
           <div ref={sliderRef} className="w-full flex keen-slider">
             {/* Slider implementation: */}
             {membershipPrices.map((price, idx) => (
               <div
-                className={`lg:hidden flex flex-col w-1/2 bg-blueGrotto overflow-hidden rounded-md even:mx-1 keen-slider__slide number-slide${idx}`}
+                className={`lg:hidden flex flex-col w-1/2 bg-blueGrotto overflow-hidden rounded-md keen-slider__slide number-slide${idx}`}
                 key={price.membershipName}
               >
                 <h3 className="bg-royalBlue py-1 text-center text-xl md:text-2xl">
                   {price.membershipName}
                 </h3>
-                <p className="text-sm lg:text-lg grow px-1 lg:px-5 py-2">
+                <p className="text-sm break-words lg:text-lg grow px-1 lg:px-5 py-2">
                   {price.membershipDesc}
                 </p>
                 <p className="bg-royalBlue py-1 text-center text-lg md:text-3xl">
@@ -104,10 +107,10 @@ function Prices() {
           <div className="flex w-full md:w-fit justify-center md:justify-start">
             {trainingPackagesPrices.map(({ packageDesc, packagePrice }) => (
               <div
-                className="flex flex-col even:mx-1 my-2 rounded-md overflow-hidden shadow-blueGrotto shadow-sm"
+                className="flex flex-col even:mx-1 my-2 rounded-md overflow-hidden md:shadow-blueGrotto md:shadow-sm"
                 key={packagePrice}
               >
-                <h3 className="grow text-md md:text-2xl  bg-blueGrotto py-1 px-2">
+                <h3 className="grow text-md md:text-2xl text-center bg-blueGrotto py-1 px-2">
                   {packageDesc}
                 </h3>
                 <p className="text-md md:text-2xl text-center bg-royalBlue py-1 px-2">

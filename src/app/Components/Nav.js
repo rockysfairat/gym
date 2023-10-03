@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 
 // Language context:
 import { useContext, useState } from "react";
@@ -24,10 +25,22 @@ function Nav() {
         className="ml-1 block sm:hidden"
       />
       <ul className="WIDESCREEN list-none hidden justify-end p-1 w-full sm:flex [&>li]:px-4 [&>li]:flex [&>li]:items-center">
-        <li>{englishVersion ? "Prices" : "Priser"}</li>
-        <li>{englishVersion ? "Equipment" : "Utrustning"}</li>
-        <li>{englishVersion ? "Staff" : "Personal"}</li>
-        <li>{englishVersion ? "Contact us" : "Skriv till oss"}</li>
+        <li>
+          <Link href="#prices">{englishVersion ? "Prices" : "Priser"}</Link>
+        </li>
+        <li>
+          <Link href="#equipment">
+            {englishVersion ? "Equipment" : "Utrustning"}
+          </Link>
+        </li>
+        <li>
+          <Link href="#staff">{englishVersion ? "Staff" : "Personal"}</Link>
+        </li>
+        <li>
+          <Link href="#contactUs">
+            {englishVersion ? "Contact us" : "Skriv till oss"}
+          </Link>
+        </li>
         <li>
           <button onClick={() => setEnglishVersion(!englishVersion)}>
             {!englishVersion ? "EN" : "SV"}
@@ -54,13 +67,21 @@ function Nav() {
         >
           X
         </span>
-        <li onClick={toggleMenu}>{englishVersion ? "Prices" : "Priser"}</li>
         <li onClick={toggleMenu}>
-          {englishVersion ? "Equipment" : "Utrustning"}
+          <Link href="#prices">{englishVersion ? "Prices" : "Priser"}</Link>
         </li>
-        <li onClick={toggleMenu}>{englishVersion ? "Staff" : "Personal"}</li>
         <li onClick={toggleMenu}>
-          {englishVersion ? "Contact us" : "Skriv till oss"}
+          <Link href="#equipment">
+            {englishVersion ? "Equipment" : "Utrustning"}
+          </Link>
+        </li>
+        <li onClick={toggleMenu}>
+          <Link href="#staff">{englishVersion ? "Staff" : "Personal"}</Link>
+        </li>
+        <li onClick={toggleMenu}>
+          <Link href="#contactUs">
+            {englishVersion ? "Contact us" : "Skriv till oss"}
+          </Link>
         </li>
         <li>
           <button onClick={() => setEnglishVersion(!englishVersion)}>

@@ -12,9 +12,14 @@ function Staff() {
   const { englishVersion } = useContext(AppContext);
   let staff = englishVersion ? staffEn : staffSv;
   return (
-    <article className="w-[95%] md:w-3/4 flex justify-center overflow-hidden">
+    <article
+      id="staff"
+      className="w-[95%] md:w-3/4 flex justify-center overflow-hidden"
+    >
       <section className="w-full  flex flex-col">
-        <h2 className="mb-4">Our staff:</h2>
+        <h2 className="mb-4">
+          {englishVersion ? "Our staff:" : "Vår personal:"}
+        </h2>
         {staff.map(({ name, position, desc, photo }) => (
           <div
             className="flex items-center mb-5 flex-col sm:flex-row"

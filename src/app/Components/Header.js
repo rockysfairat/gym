@@ -30,7 +30,7 @@ function Header() {
 
   return (
     <header className="h-fit-content w-full bg-royalBlue mt-20 overflow-y-hidden relative">
-      <div className=" flex items-center absolute lg:top-0 top-[35%] lg:left-0 left-[20%] z-10">
+      <div className=" flex items-center absolute top-0 left-0 z-10">
         <Image src="/logo.png" alt="Logotype" width="200" height="200" />
         <h1 className="font-BlackOpsOne text-4xl lg:text-5xl text-babyBlue">
           Local Gym

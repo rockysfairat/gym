@@ -47,7 +47,10 @@ function ContactUs() {
   };
 
   return (
-    <div className="w-full md:w-3/4 bg-babyBlue rounded-md my-0 md:my-3 flex flex-col items-center">
+    <div
+      id="contactUs"
+      className="w-full md:w-3/4 bg-babyBlue rounded-md my-0 md:my-3 flex flex-col items-center"
+    >
       <h2 className="w-[60%] text-navyBlue my-4">
         {englishVersion ? "Contact us:" : "Skriv till oss:"}
       </h2>

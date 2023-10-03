@@ -14,7 +14,7 @@ function Equipment() {
   let equipment = englishVersion ? equipmentEn : equipmentSv;
 
   return (
-    <article className="w-full flex justify-center">
+    <article id="equipment" className="w-full flex justify-center">
       <section className="w-[95%] md:w-3/4 flex flex-wrap justify-between">
         <h2 className="title w-full mb-4">
           {englishVersion ? "Our equipment:" : "Vår utrustning:"}
