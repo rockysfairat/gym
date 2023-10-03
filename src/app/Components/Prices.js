@@ -1,7 +1,7 @@
 "use client";
 
 // Language context:
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { AppContext } from "../layout";
 // Data:
 import {
@@ -38,7 +38,6 @@ function Prices() {
     : trainingPackagesPricesSv;
 
   // Keen slider:
-  const [small, setSmall] = useState(false);
   const [sliderRef] = useKeenSlider(
     {
       initial: 0,
@@ -51,24 +50,23 @@ function Prices() {
 
   return (
     <>
-      <article className="h-screen lg:w-full md:w-3/4 sm:w-full w-3/4 flex flex-col items-center justify-center overflow-x-hidden">
+      <article className="h-screen lg:w-full md:w-3/4 sm:w-full w-3/4 flex flex-col items-center justify-center overflow-hidden">
         <section className="lg:w-3/4 w-full">
           <h2>{englishVersion ? "Prices:" : "Priser:"}</h2>
           <div ref={sliderRef} className="w-full flex keen-slider">
             {/* Slider implementation: */}
             {membershipPrices.map((price, idx) => (
               <div
-                className={
-                  `lg:hidden flex flex-col w-1/2 bg-blueGrotto overflow-hidden rounded-md even:mx-1 keen-slider__slide` +
-                  ` number-slide${idx}`
-                }
+                className={`lg:hidden flex flex-col w-1/2 bg-blueGrotto overflow-hidden rounded-md even:mx-1 keen-slider__slide number-slide${idx}`}
                 key={price.membershipName}
               >
-                <h3 className="bg-royalBlue py-1 text-center text-2xl">
+                <h3 className="bg-royalBlue py-1 text-center text-xl md:text-2xl">
                   {price.membershipName}
                 </h3>
-                <p className="grow px-5 py-2">{price.membershipDesc}</p>
-                <p className="bg-royalBlue py-1 text-center  text-3xl">
+                <p className="text-sm lg:text-lg grow px-1 lg:px-5 py-2">
+                  {price.membershipDesc}
+                </p>
+                <p className="bg-royalBlue py-1 text-center text-lg md:text-3xl">
                   {price.membershipPrice}
                   <span className="text-sm">{price.period}</span>
                 </p>
