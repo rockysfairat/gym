@@ -10,22 +10,6 @@ import {
   membershipPricesSv,
   trainingPackagesPricesSv,
 } from "../../../data";
-// Keen slider:
-import { useKeenSlider } from "keen-slider/react";
-import "keen-slider/keen-slider.min.css";
-
-const ResizePlugin = (slider) => {
-  const observer = new ResizeObserver(function () {
-    slider.update();
-  });
-
-  slider.on("created", () => {
-    observer.observe(slider.container);
-  });
-  slider.on("destroyed", () => {
-    observer.unobserve(slider.container);
-  });
-};
 
 function Prices() {
   // language switch handler:
@@ -37,17 +21,6 @@ function Prices() {
     ? trainingPackagesPricesEn
     : trainingPackagesPricesSv;
 
-  // Keen slider:
-  const [sliderRef] = useKeenSlider(
-    {
-      initial: 0,
-      slides: {
-        perView: 3,
-      },
-    },
-    [ResizePlugin]
-  );
-
   return (
     <>
       <article
@@ -56,29 +29,10 @@ function Prices() {
       >
         <section className="lg:w-3/4 w-full">
           <h2>{englishVersion ? "Prices:" : "Priser:"}</h2>
-          <div ref={sliderRef} className="w-full flex keen-slider">
-            {/* Slider implementation: */}
-            {membershipPrices.map((price, idx) => (
-              <div
-                className={`lg:hidden flex flex-col w-1/2 bg-blueGrotto overflow-hidden rounded-md keen-slider__slide number-slide${idx}`}
-                key={price.membershipName}
-              >
-                <h3 className="bg-royalBlue py-1 text-center text-xl md:text-2xl">
-                  {price.membershipName}
-                </h3>
-                <p className="text-sm break-words lg:text-lg grow px-1 lg:px-5 py-2">
-                  {price.membershipDesc}
-                </p>
-                <p className="bg-royalBlue py-1 text-center text-lg md:text-3xl">
-                  {price.membershipPrice}
-                  <span className="text-sm">{price.period}</span>
-                </p>
-              </div>
-            ))}
-            {/* Prices without slider: */}
+          <div className="w-full grid grid-cols-2 lg:flex">
             {membershipPrices.map((price) => (
               <div
-                className="hidden odd:mx-2 lg:flex flex-col w-1/2 bg-blueGrotto rounded-md overflow-hidden shadow-blueGrotto shadow-sm"
+                className="lg:odd:mx-2 flex flex-col w-full lg:w-1/2 bg-blueGrotto rounded-md overflow-hidden shadow-blueGrotto shadow-sm"
                 key={price.membershipName}
               >
                 <h3 className="bg-royalBlue py-1 text-center text-2xl">
