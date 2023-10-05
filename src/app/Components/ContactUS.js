@@ -49,14 +49,14 @@ function ContactUs() {
   return (
     <div
       id="contactUs"
-      className="w-full md:w-3/4 bg-babyBlue rounded-md my-0 md:my-3 flex flex-col items-center"
+      className="w-full md:w-3/4 bg-navyBlue rounded-md my-0 md:my-3 flex flex-col items-center pt-20 border-solid border-2 border-babyBlue"
     >
-      <h2 className="w-[60%] text-navyBlue my-4">
+      <h2 className="md:w-[60%] w-full text-babyBlue md:px-0 px-3">
         {englishVersion ? "Contact us:" : "Skriv till oss:"}
       </h2>
       <form
         onSubmit={sendEmail}
-        className="w-[95%] md:w-[60%] md:px-5 flex flex-col items-center [&>label]:w-full [&>label]:font-secondary [&>input]:w-full [&>input]:bg-backgroundColor/25 [&>input]:rounded-md [&>input]:p-2 [&>input]:mb-4 [&>input]:font-secondary"
+        className="w-[95%] md:w-[60%] flex flex-col items-center text-babyBlue [&>label]:w-full [&>label]:font-secondary [&>input]:w-full [&>input]:bg-navyBlue [&>input]:rounded-md [&>input]:p-2 [&>input]:mb-4 [&>input]:font-secondary [&>input]:border-solid [&>input]:border-2 [&>input]:border-babyBlue"
       >
         <label for="userName">{englishVersion ? "Name:" : "Namn:"}</label>
         <input
@@ -88,8 +88,8 @@ function ContactUs() {
           name="msg"
           value={msg}
           onChange={handleMsg}
-          className="bg-backgroundColor/25 rounded-md p-2 font-secondary w-full"
-          rows="20"
+          className="bg-navyBlue rounded-md p-2 font-secondary w-full border-solid border-2 border-babyBlue"
+          rows="15"
           cols="10"
         ></textarea>
         <button

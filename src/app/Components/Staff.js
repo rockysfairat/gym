@@ -14,7 +14,7 @@ function Staff() {
   return (
     <article
       id="staff"
-      className="w-[95%] md:w-3/4 flex justify-center overflow-hidden"
+      className="w-[95%] md:w-3/4 flex justify-center overflow-hidden pt-20"
     >
       <section className="w-full  flex flex-col">
         <h2 className="mb-4">
@@ -34,7 +34,7 @@ function Staff() {
               style={{ objectFit: "cover" }}
               loading="lazy"
             />
-            <div className="bg-blueGrotto w-full sm:w-3/4 rounded-md overflow-hidden p-3 ml-0 sm:ml-4 flex flex-col grow shadow-blueGrotto shadow-sm">
+            <div className="bg-blueGrotto w-full sm:w-3/4 rounded-md overflow-hidden p-4 ml-0 sm:ml-4 flex flex-col grow shadow-blueGrotto shadow-sm">
               <h3 className="text-2xl font-semibold">{name}</h3>
               <h4 className="text-xl font-semibold">{position}</h4>
               <p className="text-lg mt-3">{desc}</p>

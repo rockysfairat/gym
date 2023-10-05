@@ -14,7 +14,7 @@ function Equipment() {
   let equipment = englishVersion ? equipmentEn : equipmentSv;
 
   return (
-    <article id="equipment" className="w-full flex justify-center">
+    <article id="equipment" className="w-full flex justify-center pt-20">
       <section className="w-[95%] md:w-3/4 flex flex-wrap justify-between">
         <h2 className="title w-full mb-4">
           {englishVersion ? "Our equipment:" : "Vår utrustning:"}
@@ -35,7 +35,7 @@ function Equipment() {
                 loading="lazy"
               />
             </div>
-            <div className="bg-blueGrotto w-full flex flex-col grow p-3">
+            <div className="bg-blueGrotto w-full flex flex-col grow p-4">
               <h3 className="text-2xl">{equipmentItem}</h3>
               <p className="text-lg">{equipmentDesc}</p>
             </div>

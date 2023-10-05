@@ -25,11 +25,11 @@ function Prices() {
     <>
       <article
         id="prices"
-        className="h-fit lg:h-[100dvh] lg:w-full md:w-3/4 sm:w-full w-3/4 flex flex-col items-center justify-center"
+        className="h-fit lg:h-[100dvh] lg:w-full md:w-3/4 sm:w-full w-3/4 flex flex-col items-center justify-center pt-20"
       >
         <section className="lg:w-3/4 w-full">
           <h2>{englishVersion ? "Prices:" : "Priser:"}</h2>
-          <div className="w-full grid grid-cols-2 lg:flex">
+          <div className="w-full grid auto-rows-fr grid-cols-2 gap-2 lg:flex">
             {membershipPrices.map((price) => (
               <div
                 className="lg:odd:mx-2 flex flex-col w-full lg:w-1/2 bg-blueGrotto rounded-md overflow-hidden shadow-blueGrotto shadow-sm"
@@ -38,7 +38,9 @@ function Prices() {
                 <h3 className="bg-royalBlue py-1 text-center text-2xl">
                   {price.membershipName}
                 </h3>
-                <p className="grow px-2 py-1">{price.membershipDesc}</p>
+                <p className="grow px-2 py-1 break-all">
+                  {price.membershipDesc}
+                </p>
                 <p className="bg-royalBlue py-1 text-center  text-3xl">
                   {price.membershipPrice}
                   <span className="text-sm">{price.period}</span>

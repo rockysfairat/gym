@@ -16,14 +16,16 @@ function Nav() {
   };
 
   return (
-    <nav className="w-full bg-babyBlue absolute top-0 left-0 h-20 flex items-center">
-      <Image
-        src="/logo.png"
-        alt="Logotype"
-        width="75"
-        height="75"
-        className="ml-1 block sm:hidden"
-      />
+    <nav className="w-full bg-babyBlue fixed top-0 left-0 h-20 flex items-center z-50">
+      <Link href="/">
+        <div className="flex items-center w-fit">
+          <Image src="/logo.png" alt="Logotype" width="75" height="75" />
+          <h1 className="font-BlackOpsOne text-xl text-navyBlue ml-2">
+            Local Gym
+          </h1>
+        </div>
+      </Link>
+
       <ul className="WIDESCREEN list-none hidden justify-end p-1 w-full sm:flex [&>li]:px-4 [&>li]:flex [&>li]:items-center">
         <li>
           <Link href="#prices">{englishVersion ? "Prices" : "Priser"}</Link>

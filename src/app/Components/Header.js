@@ -2,7 +2,7 @@
 
 // React components:
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 // Data:
 import { headerImgs } from "../../../data";
@@ -33,13 +33,6 @@ function Header() {
         backgroundPosition: "center",
       }}
     >
-      <div className=" flex items-center absolute top-0 left-0 z-50">
-        <Image src="/logo.png" alt="Logotype" width="200" height="200" />
-        <h1 className="font-BlackOpsOne text-4xl lg:text-5xl text-babyBlue">
-          Local Gym
-        </h1>
-      </div>
-
       <Image
         key={headerImgs[currentImgIndex].alt}
         className={` object-contain bg-transparent z-40 absolute left-0 right-0 top-0 bottom-0 m-auto rounded-xl border-dotted border-spacing-3 border-red w-1/2`}
@@ -55,14 +48,14 @@ function Header() {
       {/* Left Arrow */}
       <button
         onClick={prevSlide}
-        className="absolute left-0 top-[50%] text-babyBlue text-5xl z-50"
+        className="absolute left-0 top-[50%] text-babyBlue text-5xl z-30 ml-3"
       >
         &lt;
       </button>
       {/* Right Arrow */}
       <button
         onClick={nextSlide}
-        className="absolute right-0 top-[50%] text-babyBlue text-5xl z-50"
+        className="absolute right-0 top-[50%] text-babyBlue text-5xl z-30 mr-3"
       >
         &gt;
       </button>
