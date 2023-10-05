@@ -15,60 +15,57 @@ function Header() {
     const ifFirstSlide = currentImgIndex === 0;
     const newIndex = ifFirstSlide ? headerImgs.length - 1 : currentImgIndex - 1;
     setCurrentImgIndex(newIndex);
+    console.log(currentImgIndex);
   };
 
   const nextSlide = () => {
-    const isLastSlide = currentImgIndex === slides.length - 1;
+    const isLastSlide = currentImgIndex === headerImgs.length - 1;
     const newIndex = isLastSlide ? 0 : currentImgIndex + 1;
     setCurrentImgIndex(newIndex);
-  };
-
-  const goToSlide = (slideIndex) => {
-    setCurrentImgIndex(slideIndex);
+    console.log(currentImgIndex);
   };
 
   return (
-    <header className="h-[100dvh] w-full bg-royalBlue mt-20 overflow-hidden relative">
-      <div className=" flex items-center absolute top-0 left-0 z-10">
+    <header
+      className="h-[100dvh] w-full bg-royalBlue mt-20 overflow-hidden relative"
+      style={{
+        backgroundImage: `url(${headerImgs[currentImgIndex].url})`,
+        backgroundPosition: "center",
+      }}
+    >
+      <div className=" flex items-center absolute top-0 left-0 z-50">
         <Image src="/logo.png" alt="Logotype" width="200" height="200" />
         <h1 className="font-BlackOpsOne text-4xl lg:text-5xl text-babyBlue">
           Local Gym
         </h1>
       </div>
 
-      {/* <Image src={headerImgs[imgIdx].url} width="150" height="150" /> */}
-      <div
-        className="w-full flex overflow-hidden z-0 relative -translate-x-0"
-        style={{ backgroundImage: `url(${headerImgs[currentImgIndex].url})` }}
-      >
-        <Image
-          key={headerImgs[currentImgIndex].alt}
-          className={` object-contain bg-transparent`}
-          src={headerImgs[currentImgIndex].url}
-          alt={headerImgs[currentImgIndex].alt}
-          loading="eager"
-          width={1200}
-          height={1200}
-          sizes="(max-width: 768px) 100vw, (max-width: 4000px) 50vw, 33vw"
-          quality={100}
-        ></Image>
-      </div>
+      <Image
+        key={headerImgs[currentImgIndex].alt}
+        className={` object-contain bg-transparent z-40 absolute left-0 right-0 top-0 bottom-0 m-auto rounded-xl border-dotted border-spacing-3 border-red w-1/2`}
+        src={headerImgs[currentImgIndex].url}
+        alt={headerImgs[currentImgIndex].alt}
+        loading="eager"
+        width={800}
+        height={800}
+        sizes="(max-width: 768px) 100vw, (max-width: 4000px) 50vw"
+        quality={100}
+      ></Image>
+      <span className="w-full h-full absolute left-0 right-0 top-0 bottom-0 m-auto z-20 backdrop-blur-md"></span>
       {/* Left Arrow */}
-      <span
+      <button
         onClick={prevSlide}
-        className="absolute left-0 top-[50%] text-babyBlue text-lg z-50 border-solid border-2 border-red"
+        className="absolute left-0 top-[50%] text-babyBlue text-5xl z-50"
       >
-        {" "}
-        prev{" "}
-      </span>
+        &lt;
+      </button>
       {/* Right Arrow */}
-      <span
+      <button
         onClick={nextSlide}
-        className="absolute right-0 top-[50%] text-babyBlue text-lg z-50 border-solid border-2 border-red"
+        className="absolute right-0 top-[50%] text-babyBlue text-5xl z-50"
       >
-        {" "}
-        next
-      </span>
+        &gt;
+      </button>
     </header>
   );
 }

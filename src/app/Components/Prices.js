@@ -25,7 +25,7 @@ function Prices() {
     <>
       <article
         id="prices"
-        className="h-fit lg:w-full md:w-3/4 sm:w-full w-3/4 flex flex-col items-center justify-center"
+        className="h-fit lg:h-[100dvh] lg:w-full md:w-3/4 sm:w-full w-3/4 flex flex-col items-center justify-center"
       >
         <section className="lg:w-3/4 w-full">
           <h2>{englishVersion ? "Prices:" : "Priser:"}</h2>
