@@ -59,7 +59,7 @@ function Nav() {
       </div>
       <ul
         className={
-          "MENU_ITEMS flex flex-col fixed top-0 w-full h-full bg-blueGrotto transition ease-in-out delay-300 z-50 list-none mt-0 pt-12 pb-0 pl-0 pr-0 [&>li]:flex [&>li]:justify-center [&>li]:mb-4 [&>li]:text-3xl sm:hidden" +
+          "MENU_ITEMS flex flex-col fixed top-0 w-full h-full bg-blueGrotto transition-all ease-in-out delay-300 z-50 list-none mt-0 pt-12 pb-0 pl-0 pr-0 [&>li]:flex [&>li]:justify-center [&>li]:mb-4 [&>li]:text-3xl sm:hidden" +
           (isOpen ? " left-0" : " left-[-100vw]")
         }
       >
